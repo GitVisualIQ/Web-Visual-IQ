@@ -25,16 +25,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn btn-custom" href="/#">Visual IQ</a>
+            <a class="btn btn-custom" href="/visualiq">Visual IQ</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-custom" href="#">Nuestro Servicio</a>
+            <a class="btn btn-custom" href="/nuestro-servicio">Nuestro Servicio</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-custom" href="/#">Equipo</a>
+            <a class="btn btn-custom" href="/equipo">Equipo</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-custom" href="/#">Contacto</a>
+            <a class="btn btn-custom" href="/contacto">Contacto</a>
           </li>
         </ul>
       </div>
@@ -52,6 +52,32 @@
 				</div>
 			</div>
     </div>
+    <div class="basic">
+      {%include "carousel.html" %}
+
+    </div>
+
+    <div class="img_inline">
+        <img src="../static/images/img-data.png" alt>
+    </div>
+
+    
+
+    <div class="wsp"><span class="msg-wsp">¡Escríbenos!</span>
+      <a href="https://api.whatsapp.com/send?phone=+56998175377&amp;text=Hola!%20Quiero%20saber%20mas%20de%20VisualIQ..." target="_blank">
+        <img src="../static/images/ico_whatsapp.png" alt="Wsp" width="100%">
+      </a>
+    </div>
+
+
+
+    <div class="socials">
+			<span class="ico_social">
+        <a href="https://www.linkedin.com/company/visualiq-tech/" target="_blank">
+          <img src="../static/images/ico_linkedin.png" alt="Wsp" width="100%" style="height: 40px; margin-right: 0px; margin-left: 0px">
+        </a>
+      </span>
+		</div>
 
     <div class="container">
       {% block content %} 
