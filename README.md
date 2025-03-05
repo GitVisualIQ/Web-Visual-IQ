@@ -8,3 +8,11 @@ Avance:
 Navbar con colores, Logo de VIQ, Botones.
 
 Body con Video de fondo.
+
+
+Avance 2:
+
+Íconos Wsp y LinkedIn con hover
+
+
+Carousel imágenes (pendiente su puesta íconos clientes o ejemplos de modelos.
