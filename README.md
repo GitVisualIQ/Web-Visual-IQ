@@ -16,3 +16,10 @@ Avance 2:
 
 
 Carousel imágenes (pendiente su puesta íconos clientes o ejemplos de modelos.
+
+
+Avance3:
+
+Carrousel con texto iguales a página previa
+
+Tipografía ahora con colores correctos.
