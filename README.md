@@ -18,8 +18,13 @@ Avance 2:
 Carousel imágenes (pendiente su puesta íconos clientes o ejemplos de modelos.
 
 
-Avance3:
+Avance 3:
 
 Carrousel con texto iguales a página previa
 
 Tipografía ahora con colores correctos.
+
+
+Avance 4:
+
+Ahora son 3 Carruseles en el centro entre 2 Hojas.
