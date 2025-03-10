@@ -25,25 +25,40 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn btn-custom" href="/visualiq" style= "font-family: serif; ">Visual IQ</a>
+            <a class="btn btn-custom" href="/visualiq">Visual IQ</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-custom" href="/nuestro-servicio" style= "font-family: serif; ">Nuestro Servicio</a>
+            <a class="btn btn-custom" href="/nuestro-servicio">Nuestro Servicio</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-custom" href="/equipo" style= "font-family: serif; ">Equipo</a>
+            <a class="btn btn-custom" href="/equipo">Equipo</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-custom" href="/contacto" style= "font-family: serif; ">Contacto</a>
+            <a class="btn btn-custom" href="/contacto">Contacto</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    
+    <div id="content_fullwidth">
+			<div id="slider">
+				<video id="videoFondo" autoplay muted loop>
+					<source src="../static/images/bg-video.mp4" type="video/mp4">
+          <source src="/images/bg-video.webm" type="video/webm">
+				</video>
+				<div class="content-slide">
+					<h2>VISUAL IQ</h2>
+					<p>Expertos en Algoritmos IA y Visualización de Data.</p>
+				</div>
+			</div>
+    </div>
+    <div class="basic">
+      {%include "carousel.html" %}
 
-    <div class="img_inline" style="margin-top: 12cm" >
-        <img src="../static/images/bg_contact.jpg" alt  style="margin-left: 670px; transform: scale(3.85);" >
+    </div>
+
+    <div class="img_inline">
+        <img src="../static/images/img-data.png" alt>
     </div>
 
     
