@@ -1,0 +1,72 @@
+<div style="display: flex; justify-content: flex-end; height: 10vh; gap: 20px;"> <!-- Justify-content ahora es flex-start y no center, display ahora es flex y no center, espacio entre carruseles 20px -->
+
+  <!-- Carrusel 1 -->
+<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" 
+     style="display: block; width: 100%; background: #80a03400; border-radius: 0px; 
+            border: 1px solid #5411cf00; padding: 60px 60px 0px 60px; box-shadow: 4px 4px 13px 0px #00000000; top: -200%;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" style="width: 100%; height: 100%; font-family: serif; text-align: center;">
+    <div class="carousel-item active">
+      <section id="mini_boxes-overslider">
+        <div class="wrapper_section">
+          <div class="wrapper-boxes-slider">
+            <div class="test1 box-overslider animated fadeInLeft">
+              <img src="../static/images/icons-01.png" alt="CAPTURAR" width="40%" style="text-align: center;" />
+              <h2 style="color:#6FA388"><strong>CAPTURAR</strong></h2>
+              <p style="font-size: 24px; color:#ffffff">Asegurar la obtención de datos de forma eficiente con la profundidad temporal y de granularidad necesaria para cada objetivo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="carousel-item">
+      <section id="mini_boxes-overslider">
+        <div class="wrapper_section">
+          <div class="wrapper-boxes-slider">
+            <div class="test1 box-overslider animated fadeInLeft">
+              <img src="../static/images/icons-02.png" alt="COMPRENDER" width="40%" style="text-align: center;" />
+              <h2 style="color:#6FA388"><strong>COMPRENDER</strong></h2>
+              <p style="font-size: 24px; color:#ffffff">Con la experiencia de nuestros expertos y uso de tecnología de vanguardia aplicando la IA se conjuga la solidez tecnológica con la creatividad humana.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="carousel-item">
+      <section id="mini_boxes-overslider">
+        <div class="wrapper_section">
+          <div class="wrapper-boxes-slider">
+            <div class="test1 box-overslider animated fadeInLeft">
+              <img src="../static/images/icons-03.png" alt="ACTUAR" width="40%" style="text-align: center;" />
+              <h2 style="color:#6FA388"><strong>ACTUAR</strong></h2>
+              <p style="font-size: 24px; color:#ffffff">Te proporcionamos una interpretación visual clara y fácil de entender de los datos, lo que te permite actuar con confianza y eficacia.</p>
+              <p style="font-size: 24px; color:#ffffff">Conoce nuestra metodología que asegura mejoras en tu negocio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+<!-- Script que hace fijo el tamaño de los globos -->
+<script>
+window.onload = function() {
+  const carousels = document.querySelectorAll('.carousel');
+  let maxHeight = 0;
+  carousels.forEach(function(carousel) {
+    const carouselHeight = carousel.offsetHeight;
+    if (carouselHeight > maxHeight) {
+      maxHeight = carouselHeight;
+    }
+  });
+  carousels.forEach(function(carousel) {
+    carousel.style.height = maxHeight + 'px';
+  });
+}
+</script>

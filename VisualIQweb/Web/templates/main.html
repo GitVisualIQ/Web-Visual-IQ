@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {% block title %}
+        Visual IQ Web
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="{% static '../static/css/style.css' %}" />
+  </head>
+  
+  <hr style="border: 0; height: 100px; background-color: #eeeeee; margin: 0px 0;" />
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; left: 0; width: 100%; padding: 8px; z-index: 1050; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);">
+      <a class="navbar-brand" href="/"><img src="{% static '../static/images/logo-visualiq.png' %}" alt="Visual IQ Logo" style="height: 40px; margin-right: 600px; margin-left: 300px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/visualiq" style= "font-family: serif; ">Visual IQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/nuestro-servicio" style= "font-family: serif; ">Nuestro Servicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/equipo" style= "font-family: serif; ">Equipo</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/contacto" style= "font-family: serif; ">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="content_fullwidth">
+			<div id="slider">
+				<video id="videoFondo" autoplay muted loop>
+					<source src="../static/images/bg-video.mp4" type="video/mp4">
+          <source src="/images/bg-video.webm" type="video/webm">
+				</video>
+				<div class="content-slide" style="right: 30%; top: 40%;">
+					<h2 style= "font-family: serif;">VISUAL IQ</h2>
+					<p style= "font-family: serif; ">Expertos en Algoritmos IA y Visualización de Data.</p>
+				</div>
+			</div>
+
+      <div class="carousel-container"> 
+        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel"> 
+          {%include "carousel.html" %}
+          </div> 
+        </div>
+      
+  
+      
+
+    </div>
+   
+    <hr style="border: 0; height: 100px; background-color: #eeeeee; margin: 0px 0;" />
+  
+    <div class="img_inline" style="position: relative; margin-top: 8cm; margin-bottom: 2cm; right:-5%;">
+      <!-- Imagen -->
+      <img src="../static/images/img-data.png" alt="Data Visual" style="width: 100%; height: auto;" />
+    
+      <!-- Texto sobre el espacio en blanco -->
+      <div style="position: absolute; top: 45%; right: -50%; transform: translateY(-50%); max-width: 70%; text-align: left; background-color: rgba(255, 255, 255, 0.8); padding: 100px; border-radius: 30px; ">
+        <h3 style="font-family: serif; text-align:center; padding: 10px;" >Te lo explicamos</h3>
+        <h1 style="color: #6FA388; font-family: serif;">¿POR QUÉ <strong style="color: #6FA388;font-family: serif;">VISUAL IQ</strong>?</h1>
+    
+        <h2 style="color: #6FA388;font-family: serif;">Habilita la toma de decisiones acertadas</h2>
+        <p style="text-align: justify; font-family: serif">Capacidad para presentar datos y análisis de una manera visual amigable, facilitando la comprensión de la información clave, lo que a su vez conduce a la toma de decisiones más informadas y rápidas.</p>
+    
+        <h2 style="color: #6FA388;font-family: serif;">Apoyo de expertos y tecnología</h2>
+        <p style="text-align: justify; font-family: serif">Contamos con un equipo de alto nivel en experiencia, seriedad, profesionalismo y cercanía que junto a soluciones tecnológicas y algoritmos de alto nivel permiten mejores resultados en menos tiempo.</p>
+    
+        <h2 style="color: #6FA388;font-family: serif;">Adopción digital acelerada</h2>
+        <p style="text-align: justify; font-family: serif">Ayudamos a adoptar estrategias digitales de manera más efectiva proporcionando herramientas y análisis que permiten a las organizaciones aprovechar al máximo la transformación digital y las oportunidades en línea.</p>
+      </div>
+    </div>
+   
+    <hr style="border: 0; height: 100px; background-color: #eeeeee; margin: 0px 0;" />
+
+
+    <title>Cinta de Fotos</title>
+    <style>
+      /* Contenedor del carrusel */
+      .carousel {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        background-color: #ffffff;
+        padding: 180px 0;
+      }
+  
+      /* Cinta que contiene las imágenes */
+      .carousel-track {
+        display: flex;
+        gap: 100px;
+        animation: scroll 30s linear infinite;
+        position: relative;
+      }
+  
+      /* Imágenes dentro del carrusel */
+      .carousel-track img {
+        width: 50px; /* Ajusta el tamaño según sea necesario */
+        height: 100px; /* Ajusta el tamaño según sea necesario */
+        object-fit: center; /* Asegura que la imagen se recorte proporcionalmente */
+        object-position: center; /* Centra la imagen */
+        border-radius: 2px;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+      }
+  
+      /* Animación de desplazamiento continuo */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-75%);
+        }
+      }
+  
+      /* Duplicamos las imágenes para un efecto continuo */
+      .carousel-track .duplicated {
+        visibility: hidden;
+      }
+  
+      .carousel-text {
+      position: absolute;
+      top: 10px; /* Ajusta la posición vertical */
+      left: 50%; /* Centra el texto horizontalmente */
+      transform: translateX(-50%); /* Centra el texto completamente */
+      background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.5em;
+      /*font-weight: bold;*/
+      z-index: 10;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="carousel">
+      <div class="carousel-text" style="color: #6FA388; font-family: serif; font-size: 35px;">
+        CLIENTES QUE CONFIAN
+      </div>
+      <div class="carousel-track">
+
+        
+        <!-- Fotos de clientes -->
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" style="width: 200px; height: 100px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-02.png" alt="Cliente 2" style="width: 200px; height: 100px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-03.png" alt="Cliente 3" style="width: 100px; height: 100px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-04.png" alt="Cliente 4" style="width: 300px; height: 100px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-05.png" alt="Cliente 5" style="width: 200px; height: 100px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-06.png" alt="Cliente 3" style="width: 200px; height: 100px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-07.png" alt="Cliente 4" style="width: 150px; height: 150px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-08.png" alt="Cliente 5" style="width: 150px; height: 150px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-09.jpg" alt="Cliente 5" style="width: 150px; height: 150px;">
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-10.png" alt="Cliente 5" style="width: 75%; height: 75%;">
+        <!-- Duplicamos las imágenes para continuidad -->
+        <img src="../static/images/marcas-01.png" alt="Cliente 1" class="duplicated">
+        <img src="../static/images/marcas-02.png" alt="Cliente 2" class="duplicated">
+      </div>
+    </div>
+
+    
+
+    <hr style="border: 0; height: 100px; background-color: #eeeeee; margin: 0px 0;" />
+
+    <div class="wsp"><span class="msg-wsp">¡Escríbenos!</span>
+      <a href="https://api.whatsapp.com/send?phone=+56998175377&amp;text=Hola!%20Quiero%20saber%20mas%20de%20VisualIQ..." target="_blank">
+        <img src="../static/images/ico_whatsapp.png" alt="Wsp" width="100%">
+      </a>
+    </div>
+
+
+
+    <div class="socials">
+			<span class="ico_social">
+        <a href="https://www.linkedin.com/company/visualiq-tech/" target="_blank">
+          <img src="../static/images/ico_linkedin.png" alt="Wsp" width="100%" style="height: 40px; margin-right: 0px; margin-left: 0px">
+        </a>
+      </span>
+		</div>
+
+    <div class="container">
+      {% block content %} 
+      
+      {% endblock %}</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+
+
+    <div class="foot" style="position: fixed; bottom: 0; left: 0; width: 100%; padding: 2px;  color: rgb(255, 255, 255); font-size: 8pt; background-color: #6FA388; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); border-top: 3px solid #D6D6D6; z-index: 100;">
+      <span class="ico_foot">
+      <footer>
+        <p align="center">
+        VISUALIQ © 2025 Todos los derechos reservados.
+        </p>
+      </footer>
+    </span>
+    </div>
+  
+  </body>
+</html>
