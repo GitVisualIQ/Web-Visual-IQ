@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {% block title %}
+        Visual IQ Web
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="{% static '../static/css/style.css' %}" />
+  </head>
+  
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/"><img src="{% static '../static/images/logo-visualiq.png' %}" alt="Visual IQ Logo" style="height: 40px; margin-right: 600px; margin-left: 150px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/visualiq">Visual IQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/nuestro-servicio">Nuestro Servicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/equipo">Equipo</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="content_fullwidth">
+			<div id="slider">
+				<video id="videoFondo" autoplay muted loop>
+					<source src="../static/images/bg-video.mp4" type="video/mp4">
+          <source src="/images/bg-video.webm" type="video/webm">
+				</video>
+				<div class="content-slide">
+					<h2>VISUAL IQ</h2>
+					<p>Expertos en Algoritmos IA y Visualización de Data.</p>
+				</div>
+			</div>
+    </div>
+    <div class="basic">
+      {%include "carousel.html" %}
+
+    </div>
+
+    <div class="img_inline">
+        <img src="../static/images/img-data.png" alt>
+    </div>
+
+    
+
+    <div class="wsp"><span class="msg-wsp">¡Escríbenos!</span>
+      <a href="https://api.whatsapp.com/send?phone=+56998175377&amp;text=Hola!%20Quiero%20saber%20mas%20de%20VisualIQ..." target="_blank">
+        <img src="../static/images/ico_whatsapp.png" alt="Wsp" width="100%">
+      </a>
+    </div>
+
+
+
+    <div class="socials">
+			<span class="ico_social">
+        <a href="https://www.linkedin.com/company/visualiq-tech/" target="_blank">
+          <img src="../static/images/ico_linkedin.png" alt="Wsp" width="100%" style="height: 40px; margin-right: 0px; margin-left: 0px">
+        </a>
+      </span>
+		</div>
+
+    <div class="container">
+      {% block content %} 
+      
+      {% endblock %}</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+  </body>
+
+  
+</html>
