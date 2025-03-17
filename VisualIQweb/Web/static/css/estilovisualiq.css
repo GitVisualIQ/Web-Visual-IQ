@@ -1,0 +1,196 @@
+
+
+/* Estilos para el contenedor flexible */
+.contenedor-imagen-parrafo {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 100px; 
+  max-width: 1200px; 
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px; 
+  text-align: justify;
+}
+
+/* Estilos para las imágenes */
+.imagen-izquierda, .imagen-derecha {
+  width: 200px; 
+  height: auto;
+  margin: 0 20px; 
+}
+
+/* Estilos para los contenedores de texto */
+.texto-contenedor {
+  flex: 1; 
+  margin: 0 20px; 
+}
+
+/* Estilos para los títulos */
+.titulo {
+  font-family: serif;
+  font-size: 24px; 
+  color: #2C3E50; 
+  margin-bottom: 10px; 
+  text-align: center;
+}
+
+/* Estilos para los párrafos */
+.parrafo {
+  font-family: serif;
+  font-size: 20px;
+  color: #2C3E50;
+  margin: 0; 
+}
+.imagen-centro{
+  width: 200px;
+  height: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.titulo {
+  font-family: serif;
+  font-size: 24px; /* Tamaño del título */
+  color: #6FA388; /* Color del texto */
+  margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+}
+.parrafo {
+  font-family: serif;
+  font-size: 20px;
+  color: #2C3E50;
+  margin: 0; /* Elimina el margen predeterminado del párrafo */
+}
+
+.contenedor-titulo h1 {
+  font-family: serif; 
+  font-size: 36px;               /* Tamaño del texto */
+  color: #2C3E50;              /* Color del texto */
+  margin-bottom: 10px;           /* Espacio entre el título y el subtítulo */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contenedor-titulo h1 span {
+  display: block;                /* Hace que texto esté en una nueva línea */
+  font-size: 48px;               /* Tamaño más grande para texto */
+  font-weight: bold;             /* Texto en negrita */
+  color: #6FA388; 
+  text-align: center;
+}
+
+.contenedor-titulo-izquierda {
+  text-align: left;
+  margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+  margin-left: 200px; /* Ajusta el margen izquierdo según sea necesario */
+  max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.contenedor-titulo-izquierda h2 {
+  font-family: serif;
+  font-size: 32px; /* Tamaño más pequeño que el título principal */
+  color: #2C3E50; /* Color del texto */
+  margin-bottom: 10px; /* Espacio entre el título y el contenido siguiente */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.resaltado {
+  color: #6FA388; /* Color verde */
+  font-size: 22px; /* Tamaño ligeramente más grande que el párrafo */
+  font-weight: bold; /* Texto en negrita (opcional) */
+}
+/*-----------------------------ESTILO FOOTERS -----------------------------*/
+/* Footer verde */
+.foot {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px;
+    color: rgb(255, 255, 255);
+    font-size: 8pt;
+    background-color: #6FA388;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #D6D6D6;
+    z-index: 100;
+  }
+  
+  /* Footer-menu */
+  .footer-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px; /* Reducimos el padding para hacerlo más compacto */
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    font-family: serif;
+    margin-bottom: 40px; /* Espacio para el footer verde */
+    width:100%;
+  }
+  
+  .footer-column {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  .footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px; /* Reducimos el margen inferior */
+    color: #6FA388;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 8px; /* Reducimos el margen inferior */
+  }
+  
+  .footer-column ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #6FA388;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Sección de imagen y texto en el footer */
+  .viq-section {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .viq-image {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .viq-image img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .viq-text {
+    flex: 1;
+    max-width: 250px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
+  }

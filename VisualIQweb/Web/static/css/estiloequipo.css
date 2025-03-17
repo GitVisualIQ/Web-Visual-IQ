@@ -1,0 +1,197 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)), url("../images/bg1.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  justify-content: center;
+  padding-left: 100px; /* Aumentamos el padding para alejar los hexágonos del borde */
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: -10px; /* Ajuste para hexágonos alineados */
+  margin-left: 80px
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start; /* Alinea las filas a la izquierda */
+  gap: 10px; /* Espaciado entre hexágonos */
+  margin-top: -30px;
+}
+
+.row:nth-child(odd) {
+  margin-left: 65px; /* Ajuste del margen para filas impares */
+}
+
+.hexagon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: #6FA388;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border: 1px solid #ffffff; /* Borde de color */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3); /* Sombras para profundidad */
+  transition: transform 0.4s, background-color 0.4s;
+  cursor: pointer;
+}
+
+.hexagon:hover {
+  background-color: transparent; /* Fondo transparente al pasar el cursor */
+  transform: scale(1.1);
+  transition: 0.7s;
+}
+
+.hexagon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  object-fit: cover;
+  opacity: 0; /* Ocultar imágenes inicialmente */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.hexagon:hover img {
+  opacity: 1; /* Mostrar imagen al pasar el cursor */
+}
+
+
+.info-panel {
+  width: 800px;
+  min-height: 500px;
+  border: 6px solid #6FA388;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  background-image: url("../images/bg1.jpg");
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 15px;
+  position: absolute; /* Fija el panel en la pantalla */
+  top: 50%;
+  left: 70%; /* Centra el panel horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición */
+  z-index: 1000;
+}
+
+.info-panel img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info-panel .text-content {
+  flex: 1;
+  font-family: serif;
+  color: #333;
+  font-size: 20px;
+}
+
+.info-panel.hidden {
+  display: none;
+}
+
+/* Footer verde */
+.foot {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+padding: 2px;
+color: rgb(255, 255, 255);
+font-size: 8pt;
+background-color: #6FA388;
+box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+border-top: 3px solid #D6D6D6;
+z-index: 100;
+}
+
+/* Footer-menu (nuevo footer) */
+.footer-menu {
+display: flex;
+justify-content: space-between;
+padding: 20px; /* Reducimos el padding para hacerlo más compacto */
+background-color: #2C3E50;
+color: #FFFFFF;
+font-family: serif;
+margin-bottom: 40px; /* Espacio para el footer verde */
+width:100%;
+}
+
+.footer-column {
+flex: 1;
+margin: 0 20px;
+}
+
+.footer-column h4 {
+font-size: 18px;
+margin-bottom: 15px; /* Reducimos el margen inferior */
+color: #6FA388;
+}
+
+.footer-column ul {
+list-style: none;
+padding: 0;
+}
+
+.footer-column ul li {
+margin-bottom: 8px; /* Reducimos el margen inferior */
+}
+
+.footer-column ul li a {
+color: #FFFFFF;
+text-decoration: none;
+font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+color: #6FA388;
+}
+
+.social-icons {
+display: flex;
+gap: 10px;
+}
+
+.social-icons img {
+width: 24px;
+height: 24px;
+}
+
+/* Sección de imagen y texto en el footer */
+.viq-section {
+display: flex;
+align-items: flex-start;
+}
+
+.viq-image {
+flex: 0 0 auto;
+margin-right: 20px;
+}
+
+.viq-image img {
+width: 100px;
+height: auto;
+}
+
+.viq-text {
+flex: 1;
+max-width: 250px;
+font-size: 13px;
+line-height: 1.5;
+margin-bottom: 10px;
+text-align: justify;
+}

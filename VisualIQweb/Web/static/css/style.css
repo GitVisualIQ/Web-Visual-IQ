@@ -1,16 +1,16 @@
 .btn-custom {
-    border: 2px solid #6FA388; /* Color del borde */
-    background-color: #6FA388; /* Color de fondo */
-    color: #ffffff; /* Color del texto */
-    padding: 5px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Quita el subrayado */
-    font-weight: bold; /* Texto en negrita */
-    margin-right: 10px; /* Espaciado entre botones */
+    border: 2px solid #6FA388;  /* Color del borde */
+    background-color: #6FA388;  /* Color de fondo */
+    color: #ffffff;             /* Color del texto */
+    padding: 5px 15px;            /* Espaciado interno */
+    border-radius: 5px;           /* Bordes redondeados */
+    text-decoration: none;        /* Quita el subrayado */
+    font-weight: bold;            /* Texto en negrita */
+    margin-right: 10px;           /* Espaciado entre botones */
   }
   .btn-custom:hover {
     background-color: #6FA388; /* Fondo al pasar el cursor */
-    color: #FFFFFF; /* Texto blanco */
+    color: #FFFFFF;            /* Texto blanco */
   }
 
 #content_fullwidth{width: 100%;margin:0 auto;box-sizing: border-box;text-align: left;padding-top:0px}

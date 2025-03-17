@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {% block title %}
+        Visual IQ Web
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="{% static '../static/css/style.css' %}" />
+    
+  </head>
+  
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; left: 0%; width: 100%; padding: 8px; z-index: 1050; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);">
+      <a class="navbar-brand" href="/"><img src="{% static '../static/images/logo-visualiq.png' %}" alt="Visual IQ Logo" style="height: 40px; margin-right: 600px; margin-left: 300px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/visualiq" style= "font-family: serif; ">Visual IQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/nuestro-servicio" style= "font-family: serif; ">Nuestro Servicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/equipo" style= "font-family: serif; ">Equipo</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-custom" href="/contacto" style= "font-family: serif; ">Contacto</a>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+
+    
+
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #f9f9f9;
+          background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)), url("../static/images/bg1.jpg");
+          background-size: cover;
+        }
+    
+        .center {
+          display: flex;
+          flex-direction: column;
+          gap: -10px; /* Ajuste para hexágonos alineados */
+        }
+    
+        .row {
+          display: flex;
+          justify-content: center;
+          gap: 10px; /* Espaciado entre hexágonos */
+          margin-top: -30px;
+        }
+    
+        .row:nth-child(odd) {
+          margin-left: 150px; /* Desplazamiento para filas impares */
+        }
+    
+        .hexagon {
+          position: relative;
+          width: 150px; 
+          height: 150px;
+          background-color: #6FA388;
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          border: 1px solid #ffffff; /* Borde de color */
+          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3); /* Sombras para profundidad */
+          transition: transform 0.4s, background-color 0.4s;
+          cursor: pointer;
+        }
+    
+        .hexagon:hover {
+          background-color: transparent; /* Fondo transparente al pasar el cursor */
+          transform: scale(1.1);
+          transition: 0.7s;
+        }
+    
+        .hexagon img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          object-fit: cover;
+          opacity: 0; /* Ocultar imágenes inicialmente */
+          transition: opacity 0.4s ease-in-out;
+        }
+    
+        .hexagon:hover img {
+          opacity: 1; /* Mostrar imagen al pasar el cursor */
+        }
+
+        .info-panel {
+      width: 800px;
+      min-height: 500px;
+      border: 6px solid #6FA388;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #ffffff;
+      background-image: url("../static/images/bg1.jpg");
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 15px;
+      position: absolute;
+      top: 75%;
+      right: 10%;
+      left: calc(100% +20px);
+      transform: translateY(-100%);
+      z-index: 1000;
+    }
+    .center {
+        position: relative;
+    }
+
+    .info-panel img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .info-panel .text-content {
+      flex: 1;
+      font-family: serif;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .info-panel.hidden {
+      display: none;
+    }
+      </style>
+</head>
+<body>
+  
+    <div class="center">
+        <div class="row">
+          <div class="hexagon" onclick="showInfo('Nuestro Equipo VisualIQ', '../static/images/LVIQ.png', 'Este es el texto relacionado con Persona 2.')" >
+            <img src="../static/images/LVIQ.png" alt="Foto 1">
+          </div>
+          <div class="hexagon" onclick="showInfo('Dora Díaz', '../static/images/t1.jpg', 'Ingeniera Civil Industrial con amplia experiencia en transformación y análisis de datos mediante Python y SQL. Especialista en procesos ETL, automatización de datos y reportería con Power BI y QuickSight, mejorando la visualización y gestión de la información. Experta en web scraping para la extracción de datos estratégicos y generación de insights accionables. Además, cuento con experiencia en la migración de bases de datos a AWS, optimizando infraestructuras con herramientas como Athena, Glue y Lambda para soluciones eficientes y escalables que impulsan la toma de decisiones basadas en datos.')">
+            <img src="../static/images/t1.jpg" alt="Foto 2">
+          </div>
+          <div class="hexagon">
+            <img src="../static/images/visualiq_3.png" alt="Foto 3">
+          </div>
+          <div class="hexagon" onclick="showInfo('Rodrigo Rosales', '../static/images/t2.jpg', 'Este es el texto relacionado con Persona 2.')">
+            <img src="../static/images/t2.jpg" alt="Foto 6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="hexagon">
+            <img src="../static/images/visualiq_3.png" alt="Foto 4">
+          </div>
+          <div class="hexagon" onclick="showInfo('Pedro Vallasciani', '../static/images/t3.jpg', 'Este es el texto relacionado con Persona 3.')">
+            <img src="../static/images/t3.jpg" alt="Foto 5">
+          </div>
+          <div class="hexagon">
+            <img src="../static/images/visualiq_3.png" alt="Foto 6">
+          </div>
+          <div class="hexagon" onclick="showInfo('Benjamin Moran', '../static/images/t4.jpg', 'Este es el texto relacionado con Persona 4.')">
+            <img src="../static/images/t4.jpg" alt="Foto 6">
+          </div>
+        </div>
+        <div class="row">
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 4">
+            </div>
+            <div class="hexagon" onclick="showInfo('Franco Vilugron', '../static/images/t5.jpg', 'Este es el texto relacionado con Persona 5.')">
+              <img src="../static/images/t5.jpg" alt="Foto 5">
+            </div>
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 6">
+            </div>
+            <div class="hexagon" onclick="showInfo('Felipe Rodriguez', '../static/images/t6.jpg', 'Este es el texto relacionado con Persona 6.')">
+                <img src="../static/images/t6.jpg" alt="Foto 6">
+              </div>
+          </div>
+          <div class="row">
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 4">
+            </div>
+            <div class="hexagon" onclick="showInfo('Matias Chijani', '../static/images/t0.jpg', 'Visual IQ')">
+              <img src="../static/images/t0.jpg" alt="Foto 5">
+            </div>
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 6">
+            </div>
+            <div class="hexagon" onclick="showInfo('Felipe Canales', '../static/images/t7.jpg', 'Visual IQ')">
+              <img src="../static/images/t7.jpg" alt="Foto 5">
+              </div>
+          </div>
+          <div class="row">
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 4">
+            </div>
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 5">
+            </div>
+            <div class="hexagon">
+              <img src="../static/images/visualiq_3.png" alt="Foto 6">
+            </div>
+            <div class="hexagon">
+                <img src="../static/images/visualiq_3.png" alt="Foto 6">
+              </div>
+          </div>
+          
+    </div>
+
+    <div class="info-panel hidden" id="infoPanel">
+        <img id="infoImage" src="" alt="Foto de persona">
+        <div class="text-content">
+          <h4 id="infoTitle" style="font-size: 30px;">Título</h4>
+          <p id="infoText" style="text-align: justify;">Texto de descripción.</p>
+        </div>
+      </div>
+    
+      <script>
+        function showInfo(title, imageUrl, text) {
+          const panel = document.getElementById('infoPanel');
+          const titleElement = document.getElementById('infoTitle');
+          const imageElement = document.getElementById('infoImage');
+          const textElement = document.getElementById('infoText');
+    
+          titleElement.textContent = title;
+          imageElement.src = imageUrl;
+          textElement.textContent = text;
+    
+          panel.classList.remove('hidden');
+        }
+      </script>
+   
+   
+
+    <div class="wsp"><span class="msg-wsp">¡Escríbenos!</span>
+      <a href="https://api.whatsapp.com/send?phone=+56998175377&amp;text=Hola!%20Quiero%20saber%20mas%20de%20VisualIQ..." target="_blank">
+        <img src="../static/images/ico_whatsapp.png" alt="Wsp" width="100%">
+      </a>
+    </div>
+
+
+
+    <div class="socials">
+			<span class="ico_social">
+        <a href="https://www.linkedin.com/company/visualiq-tech/" target="_blank">
+          <img src="../static/images/ico_linkedin.png" alt="Wsp" width="100%" style="height: 40px; margin-right: 0px; margin-left: 0px">
+        </a>
+      </span>
+		</div>
+
+    <div class="container">
+      {% block content %} 
+      
+      {% endblock %}</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+
+    
+
+
+    <div class="foot" style="position: fixed; bottom: 0; left: 0; width: 100%; padding: 2px;  color: rgb(255, 255, 255); font-size: 8pt; background-color: #6FA388; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); border-top: 3px solid #D6D6D6; z-index: 100;">
+      <span class="ico_foot">
+      <footer>
+        <p align="center">
+        VISUALIQ © 2025 Todos los derechos reservados.
+        </p>
+      </footer>
+    </span>
+    </div>
+
+
+  </body>
+
+  
+</html>

@@ -7,103 +7,112 @@
   <title>
     {% block title %} Visual IQ Web {% endblock %}
   </title>
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="{% static '../static/css/style.css' %}" />
-  <style>
-    body {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)), url('{%static "../static/images/visualiq_3.png"%}');
-      background-size: cover;
-    }
-    .contacto {
-      max-width: 400px;
-      background: #F8F9FA;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .contacto input, .contacto textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    .boton_form {
-      width: 100%;
-      padding: 10px;
-      background: #6FA388;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .boton_form:hover {
-      background: #5B8B72;
-    }
-  </style>
+  <link rel="stylesheet" href="{% static '../static/css/estilocontacto.css' %}" /> 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; left: 0; width: 100%; padding: 8px; z-index: 1050; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);">
-    <a class="navbar-brand" href="/"><img src="{% static '../static/images/logo-visualiq.png' %}" alt="Visual IQ Logo" style="height: 40px; margin-right: 600px; margin-left: 300px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+      <img src="{% static '../static/images/logo-visualiq.png' %}" alt="Visual IQ Logo" style="height: 40px; margin-right: 600px; margin-left: 300px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="btn btn-custom" href="/visualiq">Visual IQ</a></li>
-        <li class="nav-item"><a class="btn btn-custom" href="/nuestro-servicio">Nuestro Servicio</a></li>
-        <li class="nav-item"><a class="btn btn-custom" href="/equipo">Equipo</a></li>
-        <li class="nav-item"><a class="btn btn-custom" href="/contacto">Contacto</a></li>
+        <li class="nav-item">
+          <a class="btn btn-custom" href="/visualiq" style="font-family: serif;">Visual IQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-custom" href="/nuestro-servicio" style="font-family: serif;">Nuestro Servicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-custom" href="/equipo" style="font-family: serif;">Equipo</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-custom" href="/contacto" style="font-family: serif;">Contacto</a>
+        </li>
       </ul>
     </div>
   </nav>
-  <section id="contacto">
-    <form method="post" class="contacto">
-      <input type="text" name="nombre" placeholder="Nombre Completo" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="telefono" placeholder="Teléfono" required>
-      <textarea rows="5" name="mensaje" placeholder="Mensaje o requerimiento..." required></textarea>
-      <button id="boton_contacto" class="boton_form">Enviar Mensaje</button>
-    </form>
-  </section>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  <div class="foot" style="position: fixed; bottom: 0; left: 0; width: 100%; padding: 2px;  color: rgb(255, 255, 255); font-size: 8pt; background-color: #6FA388; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); border-top: 3px solid #D6D6D6; z-index: 100;">
-    <span class="ico_foot">
-    <footer>
-      <p align="center">
-      VISUALIQ © 2025 Todos los derechos reservados.
-      </p>
-    </footer>
-  </span>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Imagen que ocupa toda la página -->
+    <img src="{% static '../static/images/bg_contact.jpg' %}" alt="Background" class="full-page-image" />
+
+    <!-- Título debajo de la barra de navegación -->
+    <div class="title-container">
+      <h1>
+        Estamos a un par de clics
+        <span>CONTÁCTANOS</span>
+      </h1>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto">
+      <form method="post" class="contacto">
+        {% csrf_token %}
+        <input type="text" name="nombre" placeholder="Nombre Completo" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="telefono" placeholder="Teléfono" required>
+        <textarea rows="5" name="mensaje" placeholder="Mensaje o requerimiento..." required></textarea>
+        <button id="boton_contacto" class="boton_form">Enviar Mensaje</button>
+      </form>
+    </section>
   </div>
+
+  <!-- Nuevo footer (footer-menu) -->
+  <div class="footer-menu">
+    <div class="footer-column">
+      <div class="viq-section">
+        <!-- Imagen -->
+        <div class="viq-image">
+          <img src="{% static '../static/images/VIQ.png' %}" alt="Visual IQ" />
+        </div>
+        <!-- Texto -->
+        <div class="viq-text">
+          Visual IQ redefine la forma en que interactúas con tus datos empresariales. Con una interfaz intuitiva impulsada por inteligencia artificial, machine learning y algoritmos avanzados, nuestra plataforma ofrece visualizaciones dinámicas que simplifican la complejidad de la información. Desde la gestión de procesos hasta decisiones estratégicas, Visual IQ es tu aliado para optimizar operaciones y potenciar el crecimiento empresarial. Descubre el futuro de la visualización inteligente con Visual IQ.
+        </div>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="/nuestro-servicio">Nuestro Servicio</a></li>
+        <li><a href="/equipo">Equipo</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contáctanos</h4>
+      <ul>
+        <li><a href="mailto:fcastro@visualiq.tech">fcastro@visualiq.tech</a></li>
+        <li><a href="tel:+56998175377">+56 9 9817 5377</a></li>
+        <li><a href="https://www.google.com/maps?q=Avda+La+Dehesa+181,+Torre+1,+of.+905,+Lo+Barnechea,+Santiago,+Chile" target="_blank">Dirección: Avda La Dehesa 181, Torre 1, of. 905, Lo Barnechea, Santiago, Chile</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Síguenos</h4>
+      <ul class="social-icons">
+        <li><a href="https://www.linkedin.com/company/visualiq-tech/" target="_blank"><img src="{% static 'images/ico_linkedin.png' %}" alt="LinkedIn"></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer verde -->
+  <div class="foot">
+    <span class="ico_foot">
+      <footer>
+        <p align="center">VISUALIQ © 2025 Todos los derechos reservados.</p>
+      </footer>
+    </span>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
-<script>
-  document.querySelector('.contacto').addEventListener('submit', function(event) {
-    let nombre = document.querySelector('input[name="nombre"]').value;
-    let email = document.querySelector('input[name="email"]').value;
-    let telefono = document.querySelector('input[name="telefono"]').value;
-    let mensaje = document.querySelector('textarea[name="mensaje"]').value;
-    // Expresiones regulares para validar
-    let emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-    let phoneRegex = /^[0-9\\-\\s]+$/;
-    if (nombre.length < 3) {
-      alert('El nombre debe tener al menos 3 caracteres.');
-      event.preventDefault();
-    } else if (!emailRegex.test(email)) {
-      alert('Por favor, introduce un email válido.');
-      event.preventDefault();
-    } else if (!phoneRegex.test(telefono)) {
-      alert('El teléfono solo debe contener números, espacios o guiones.');
-      event.preventDefault();
-    } else if (mensaje.length < 10) {
-      alert('El mensaje debe tener al menos 10 caracteres.');
-      event.preventDefault();
-    }
-  });
-</script>
 </html>
