@@ -5,7 +5,7 @@
   display: flex;
   align-items: center; 
   justify-content: center; 
-  margin-top: 100px; 
+  margin-top: 80px; 
   max-width: 1200px; 
   margin-left: auto;
   margin-right: auto;
@@ -51,7 +51,7 @@
 
 .titulo {
   font-family: serif;
-  font-size: 24px; /* Tamaño del título */
+  font-size: 28px; /* Tamaño del título */
   color: #6FA388; /* Color del texto */
   margin-bottom: 10px; /* Espacio entre el título y el párrafo */
 }
@@ -73,7 +73,7 @@
 
 .contenedor-titulo h1 span {
   display: block;                /* Hace que texto esté en una nueva línea */
-  font-size: 48px;               /* Tamaño más grande para texto */
+  font-size: 70px;               /* Tamaño más grande para texto */
   font-weight: bold;             /* Texto en negrita */
   color: #6FA388; 
   text-align: center;
@@ -86,20 +86,28 @@
   max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
+  padding: 0 5px;
 }
 
 .contenedor-titulo-izquierda h2 {
   font-family: serif;
-  font-size: 32px; /* Tamaño más pequeño que el título principal */
+  font-size: 50px; /* Aumentamos el tamaño del título */
   color: #2C3E50; /* Color del texto */
-  margin-bottom: 10px; /* Espacio entre el título y el contenido siguiente */
+  margin-bottom: 1px; /* Espacio entre el título y el contenido siguiente */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.contenedor-titulo-izquierda h3 {
+  font-family: serif;
+  font-size: 45px; /* Aumentamos el tamaño del título */
+  color: #2C3E50; /* Color del texto */
+  margin-bottom: 1px; /* Espacio entre el título y el contenido siguiente */
   font-weight: bold; /* Texto en negrita */
 }
 
 .resaltado {
   color: #6FA388; /* Color verde */
-  font-size: 22px; /* Tamaño ligeramente más grande que el párrafo */
+  font-size: 36px; /* Aumentamos el tamaño del texto */
   font-weight: bold; /* Texto en negrita (opcional) */
 }
 /*-----------------------------ESTILO FOOTERS -----------------------------*/

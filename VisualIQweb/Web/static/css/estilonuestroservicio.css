@@ -1,39 +1,81 @@
+/* Contenedor principal */
 .contenedor-imagen-parrafo {
-    display: flex;
-    align-items: center;        /* Centra verticalmente la imagen y el párrafo */
-    justify-content: center;    /* Centra horizontalmente el contenido */
-    margin-top: 100px;          /* Ajusta el margen superior según sea necesario */
-    max-width: 1200px;          /* Ajusta el ancho máximo del contenedor */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;            /* Añade un poco de padding a los lados */
+  display: flex;
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor y reduce márgenes laterales */
+  padding: 0 20px; /* Padding reducido en los lados */
 }
 
+/* Imagen a la izquierda */
 .imagen-izquierda {
-    width: 200px;               /* Ajusta el tamaño de la imagen según sea necesario */
-    height: auto;
-    margin-right: 80px;         /* Espacio entre la imagen y el párrafo */
+  width: 200px; /* Ancho fijo para la imagen */
+  text-align: center; /* Centra el texto debajo de la imagen */
+  margin-right: 60px; /* Más espacio entre la imagen y el párrafo */
 }
+
+.imagen-izquierda img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+.texto-debajo-imagen {
+  font-family: serif;
+  font-size: 16px;
+  color: #2C3E50;
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
+
 .imagen-derecha {
   width: 200px;               
   height: auto;
   margin-left: 80px;         
 }
 
-.parrafo{
-  margin: 0;
-  width: 600px;
+/* Párrafo en el centro */
+.parrafo {
+  width: 400px; /* Ancho fijo para el párrafo */
   font-family: serif;
   font-size: 20px;
   color: #2C3E50;
   text-align: justify;
+  margin: 0 60px; /* Más espacio entre el párrafo y los otros elementos */
+  flex-shrink: 0; /* Evita que el párrafo se reduzca */
 }
 
+
+/* Carrusel a la derecha */
+.carrusel-derecha {
+  width: 300px; /* Ancho fijo para el carrusel */
+  margin-left: 60px; /* Más espacio entre el párrafo y el carrusel */
+  flex-shrink: 0; /* Evita que el carrusel se reduzca */
+}
+
+.carrusel-derecha .carousel-inner {
+  border-radius: 10px; /* Bordes redondeados para el carrusel */
+  overflow: hidden; /* Oculta el desbordamiento de las imágenes */
+}
+
+.carrusel-derecha .carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilo para el título centrado */
+.contenedor-titulo {
+  text-align: center;
+  margin-top: 50px; /* Espacio arriba del título */
+  margin-bottom: 30px; /* Espacio entre el título y el contenido */
+}
+
+
 .contenedor-titulo h1 {
-  font-family: serif; 
-  font-size: 36px;               /* Tamaño del texto */
-  color: #2C3E50;              /* Color del texto */
-  margin-bottom: 10px;           /* Espacio entre el título y el subtítulo */
+  font-family: serif;
+  font-size: 36px;
+  color: #2C3E50;
+  font-weight: bold;
 }
 
 .contenedor-titulo h1 span {
